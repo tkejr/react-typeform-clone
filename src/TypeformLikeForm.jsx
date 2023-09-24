@@ -2,7 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import "font-awesome/css/font-awesome.min.css";
 import "./css/form.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faArrowRight,
+  faCheck,
+  faArrowUp,
+} from "@fortawesome/free-solid-svg-icons";
 
 function TypeformLikeForm({ questions, onSubmit }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -89,7 +94,7 @@ function TypeformLikeForm({ questions, onSubmit }) {
           onClick={handlePreviousQuestion}
           className="absolute top-2 right-2 px-3 py-1 border-2 border-black  text-black focus:outline-none focus:ring focus:ring-gray-200 rounded-md mt-4 mr-4"
         >
-          <i className="fa fa-arrow-up"></i>
+          <FontAwesomeIcon icon={faArrowUp} />
         </button>
       )}
 
@@ -104,11 +109,7 @@ function TypeformLikeForm({ questions, onSubmit }) {
             <span className="text-blue-500 text-2xl">
               {currentQuestion + 1}
             </span>{" "}
-            <i
-              className="fa fa-arrow-right text-blue-500 text-xl"
-              aria-hidden="true"
-            ></i>{" "}
-            {questions[currentQuestion]}
+            <FontAwesomeIcon icon={faArrowRight} /> {questions[currentQuestion]}
           </h2>
 
           <form onSubmit={handleSubmit} className="w-full mb-8 ml-10">
@@ -139,7 +140,7 @@ function TypeformLikeForm({ questions, onSubmit }) {
                     onClick={handleNextQuestion}
                     className="text-xl px-4 py-2 bg-blue-500 text-white rounded-md focus:outline-none focus:ring focus:ring-blue-200 flex items-center"
                   >
-                    OK <i className="fa fa-check ml-2"></i>
+                    OK <FontAwesomeIcon icon={faCheck} />
                   </button>
                   <span className="ml-2 mt-3">
                     {" "}
