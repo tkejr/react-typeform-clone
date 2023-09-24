@@ -109,7 +109,12 @@ function TypeformLikeForm({ questions, onSubmit }) {
             <span className="text-blue-500 text-2xl">
               {currentQuestion + 1}
             </span>{" "}
-            <FontAwesomeIcon icon={faArrowRight} /> {questions[currentQuestion]}
+            <FontAwesomeIcon
+              className="text-blue-500"
+              icon={faArrowRight}
+              size="xs"
+            />{" "}
+            {questions[currentQuestion]}
           </h2>
 
           <form onSubmit={handleSubmit} className="w-full mb-8 ml-10">
@@ -140,7 +145,7 @@ function TypeformLikeForm({ questions, onSubmit }) {
                     onClick={handleNextQuestion}
                     className="text-xl px-4 py-2 bg-blue-500 text-white rounded-md focus:outline-none focus:ring focus:ring-blue-200 flex items-center"
                   >
-                    OK <FontAwesomeIcon icon={faCheck} />
+                    OK <FontAwesomeIcon icon={faCheck} className="ml-2" />
                   </button>
                   <span className="ml-2 mt-3">
                     {" "}
